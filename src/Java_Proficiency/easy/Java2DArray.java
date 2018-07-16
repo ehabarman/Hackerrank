@@ -1,0 +1,27 @@
+//Date 9-7-2018
+package Java_Proficiency.easy;
+
+import java.util.Scanner;
+
+public class Java2DArray {
+
+	public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int[][] ar = new int[6][6];
+        int i, j, sum, final_sum = -99999;
+        for (i = 0; i < 6; i++) {
+            for (j = 0; j < 6; j++) {
+                ar[i][j] = sc.nextInt();
+            }
+        }
+
+        for (i = 0; i < 4; i++) {
+            for (j = 0; j < 4; j++) {
+                sum = ar[i][j]+ar[i][j+1]+ar[i][j+2]+ar[i+1][j+1]+ar[i+2][j]+ar[i+2][j+1]+ar[i+2][j+2];
+                final_sum = Math.max(sum, final_sum);
+            }
+        }
+        sc.close();
+        System.out.println(final_sum);
+}
+}
