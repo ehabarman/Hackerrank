@@ -1,95 +1,86 @@
-// Don't place your source in a package
 import java.util.*;
-import java.lang.*;
-import java.io.*;
+public class Main {
 
-// Please name your class Main
-class Main {
-    public static void main (String[] args) throws java.lang.Exception {
-        Scanner in = new Scanner(System.in);
-        int t = in.nextInt();
-        int MOD = 5;
-        while(t-->0){
-            int a = in.nextInt();
-            int b = in.nextInt();
-            int c = in.nextInt();
+	public static final int MAXN = 3010;
+	public static final int MOD = 1000000007;
+	public static int[][] Binom = new int[ MAXN + 1 ][ MAXN + 1 ];
+	
 
-            long newPow = modBinomial(b,c,MOD);
-            System.out.println(newPow);
-            System.out.println(modPow(a,newPow,MOD));
+	
+	
+	public static void main(String []args) {
+	    calc();
+	    Scanner s = new Scanner(System.in);
+	    int T = s.nextInt();
+	    for( int t = 1; t <= T; t++ ) {
+	        int a = s.nextInt();
+	        int b = s.nextInt();
+	        int c = s.nextInt();
+	       
+	        long binom;
+	        if( b <= 3000 && c <= 3000 ) {
+	            binom = Binom[ b ][ c ];
+	        }  
+	        else {
+	            binom = fact( b ) % ( ( MOD - 1 )  );
+	            binom = ( binom * inverse( fact( c ), ( MOD - 1 ) / 2 ) ) %  ( ( MOD - 1 )  );
+	            binom = ( binom * inverse( fact( b - c ), ( MOD - 1 ) / 2 ) ) % ( ( MOD - 1 ) );
+	        }
+	        System.out.println(power(a,binom,MOD));
+	    }
+	    s.close();
+	}
+	
+	public static void calc() {
+	    for( int i = 0; i <= MAXN; i++ ) Binom[ i ][ 0 ] =1;
+	    for( int i = 1; i <= MAXN; i++ ) {
+	        for( int j = 1; j <= i; j++ ) {
+	            Binom[ i ][ j ] = ( Binom[ i - 1 ][ j ] + Binom[ i - 1 ][ j - 1 ] ) % ( MOD - 1 );
+	        }
+	    }
+	}
+	
+	public static long power( long a, long b, int MOD) {
+	    if( b == 0 || a == 1 ) 
+	    	return 1;
+	    else if( b == 1 ) 
+	    	return a;
+	    long val = power( a, b / 2,MOD) % MOD;
+	    if( b % 2 == 1) 
+	    	return ( ( val * val ) % MOD ) * a % MOD;
+	    else 
+	    	return ( val * val ) % MOD;
+	}
+	
+	public static long fact( long a ) {
+	    long factorial = 1;
+	    for( long i = 1; i <= a; i++ ) 
+	    	factorial = ( factorial * i ) % ( MOD - 1 );
+	    return factorial;
+	}
+	
+	public static long inverse( long a, long p ) {
+		  return ( extended_euclidean( a, p ).X + p ) % p;
+	}
+	
+	public static Pair extended_euclidean( long a, long b ) {
+		  if( b == 0 ) 
+			  return new Pair( 1, 0 );
+		  
+		  Pair A = extended_euclidean( b, a % b );
+		  return new Pair( A.Y, ( A.X - A.Y * ( a / b ) ) );
+	}
+	
+	
+}
 
-        }
-
-    }
-
-
-    public static long modPow(long a, long x, long p) {
-        //calculates a^x mod p in logarithmic time.
-        long res = 1;
-        while(x > 0) {
-            if( x % 2 != 0) {
-                res = (res * a) % p;
-            }
-            a = (a * a) % p;
-            x /= 2;
-        }
-        return res;
-    }
-
-
-    public static long modInverse(int a, int m) {
-        int m0 = m;
-        int y = 0, x = 1;
-
-        if (m == 1)
-            return 0;
-
-        while (a > 1)
-        {
-            // q is quotient
-            int q = a / m;
-
-            int t = m;
-
-            // m is remainder now, process
-            // same as Euclid's algo
-            m = a % m;
-            a = t;
-            t = y;
-
-            // Update x and y
-            y = x - q * y;
-            x = t;
-        }
-
-        // Make x positive
-        if (x < 0)
-            x += m0;
-
-        return x;
-    }
-    public static long modBinomial(int n, int k, int p) {
-        long numerator = 1; // n * (n-1) * ... * (n-k+1)
-        for (int i=0; i<k; i++) {
-            numerator = (numerator * (n-i) ) % p;
-        }
-
-        int denominator = 1; // k!
-        for (int i=1; i<=k; i++) {
-            denominator = (denominator * i) % p;
-        }
-
-        // numerator / denominator mod p.
-        return ( numerator* modInverse(denominator,p) ) % p;
-    }
-
-
-
-    // Function to return gcd of a and b
-    static int gcd(int a, int b)
-    {
-        if (a == 0)
-            return b;
-        return gcd(b % a, a);
-    }
+class Pair{
+	
+	public long X;
+	public long Y;
+	
+	public Pair(long X,long Y) {
+		this.X = X;
+		this.Y = Y;
+	}
 }
