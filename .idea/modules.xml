@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/Python workplace.iml" filepath="$PROJECT_DIR$/.idea/Python workplace.iml" />
+      <module fileurl="file://$PROJECT_DIR$/src/Data Structure/Data Structure.iml" filepath="$PROJECT_DIR$/src/Data Structure/Data Structure.iml" />
+      <module fileurl="file://$PROJECT_DIR$/src/Contests/IEEEXtreme 11.0/IEEEXtreme 11.0.iml" filepath="$PROJECT_DIR$/src/Contests/IEEEXtreme 11.0/IEEEXtreme 11.0.iml" />
+      <module fileurl="file://$PROJECT_DIR$/hackerrank.iml" filepath="$PROJECT_DIR$/hackerrank.iml" />
     </modules>
   </component>
 </project>
