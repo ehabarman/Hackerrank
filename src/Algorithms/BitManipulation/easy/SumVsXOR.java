@@ -18,7 +18,7 @@ public class SumVsXOR {
             n=n>>1;
         }
 
-        System.out.println(1l << unset_bits);
+        System.out.println(1L << unset_bits);
         s.close();
     }
 
