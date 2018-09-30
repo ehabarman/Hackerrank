@@ -21,7 +21,7 @@ public class SeperateTheNumbers {
                 while (test.length() < s.length()) {
                     test += Long.toString(++x);
                 }
-                
+
                 if (test.equals(s)) {
                     valid = true;
                     break;
