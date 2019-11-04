@@ -1,21 +1,21 @@
-package Regex.Introduction.easy;
+package Regex.Repetitions.easy;
 
 import java.util.Scanner;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class MatchingWhitespaceAndNonWhitespaceCharacter  {
+public class MatchingInRangeXToYRepetitions {
 
     public static void main(String[] args) {
 
-        Regex_Test tester = new Regex_Test();
-        tester.checker("(\\S\\S\\s){2}\\S\\S");
+        MatchingInRangeXToYRepetitions.Regex_Test tester = new MatchingInRangeXToYRepetitions.Regex_Test();
+        tester.checker("^\\d{1,2}[a-zA-Z]{3,}\\W{0,3}$");
 
     }
 
     static class Regex_Test {
 
-        public void checker(String Regex_Pattern){
+        public void checker(String Regex_Pattern) {
 
             Scanner Input = new Scanner(System.in);
             String Test_String = Input.nextLine();

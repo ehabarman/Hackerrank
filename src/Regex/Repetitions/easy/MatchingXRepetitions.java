@@ -1,15 +1,14 @@
-package Regex.Repetitions;
+package Regex.Repetitions.easy;
 
-import java.util.Scanner;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
+import java.util.*;
+import java.util.regex.*;
 
-public class MatchingZeroOrMoreRepetitions {
+public class MatchingXRepetitions {
 
     public static void main(String[] args) {
 
-        MatchingZeroOrMoreRepetitions.Regex_Test tester = new MatchingZeroOrMoreRepetitions.Regex_Test();
-        tester.checker("^\\d{2,}[a-z]*[A-Z]*$");
+        Regex_Test tester = new Regex_Test();
+        tester.checker("^[a-zA-Z02468]{40}[13579\\s]{5}$");
 
     }
 
@@ -26,3 +25,4 @@ public class MatchingZeroOrMoreRepetitions {
 
     }
 }
+

@@ -1,15 +1,15 @@
-package Regex.Repetitions;
+package Regex.Repetitions.easy;
 
 import java.util.Scanner;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class MatchingInRangeXToYRepetitions {
+public class MatchingZeroOrMoreRepetitions {
 
     public static void main(String[] args) {
 
-        MatchingInRangeXToYRepetitions.Regex_Test tester = new MatchingInRangeXToYRepetitions.Regex_Test();
-        tester.checker("^\\d{1,2}[a-zA-Z]{3,}\\W{0,3}$");
+        MatchingZeroOrMoreRepetitions.Regex_Test tester = new MatchingZeroOrMoreRepetitions.Regex_Test();
+        tester.checker("^\\d{2,}[a-z]*[A-Z]*$");
 
     }
 
@@ -26,4 +26,3 @@ public class MatchingInRangeXToYRepetitions {
 
     }
 }
-

@@ -1,15 +1,15 @@
-package Regex.Repetitions;
+package Regex.Repetitions.easy;
 
 import java.util.Scanner;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class MatchingEndingItems  {
+public class MatchingOneOrMoreRepetitions {
 
     public static void main(String[] args) {
 
-        MatchingEndingItems.Regex_Test tester = new MatchingEndingItems.Regex_Test();
-        tester.checker("^[a-zA-Z]*s$");
+        MatchingOneOrMoreRepetitions.Regex_Test tester = new MatchingOneOrMoreRepetitions.Regex_Test();
+        tester.checker("^\\d+[A-Z]+[a-z]+$");
 
     }
 

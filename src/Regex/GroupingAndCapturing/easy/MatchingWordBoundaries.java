@@ -1,21 +1,23 @@
-package Regex.Repetitions;
+package Regex.GroupingAndCapturing.easy;
+
+import Regex.CharacterClass.easy.MatchingSpecificCharacters;
 
 import java.util.Scanner;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class MatchingOneOrMoreRepetitions {
+public class MatchingWordBoundaries  {
 
     public static void main(String[] args) {
 
-        MatchingOneOrMoreRepetitions.Regex_Test tester = new MatchingOneOrMoreRepetitions.Regex_Test();
-        tester.checker("^\\d+[A-Z]+[a-z]+$");
+        MatchingWordBoundaries.Regex_Test tester = new MatchingWordBoundaries.Regex_Test();
+        tester.checker("\\b[aeiouAEIOU][a-zA-Z]*\\b");
 
     }
 
     static class Regex_Test {
 
-        public void checker(String Regex_Pattern) {
+        public void checker(String Regex_Pattern){
 
             Scanner Input = new Scanner(System.in);
             String Test_String = Input.nextLine();
@@ -26,3 +28,4 @@ public class MatchingOneOrMoreRepetitions {
 
     }
 }
+

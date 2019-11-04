@@ -9,7 +9,7 @@ public class MatchingStartAndEnd {
     public static void main(String[] args) {
 
         Regex_Test tester = new MatchingStartAndEnd.Regex_Test();
-        tester.checker("^\\d\\w{4}\\.$"); // Use \\ instead of using \
+        tester.checker("^\\d\\w{4}\\.$");
 
     }
 

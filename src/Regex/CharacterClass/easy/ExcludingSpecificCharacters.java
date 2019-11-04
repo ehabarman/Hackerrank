@@ -9,7 +9,7 @@ public class ExcludingSpecificCharacters {
     public static void main(String[] args) {
 
         Regex_Test tester = new Regex_Test();
-        tester.checker("^\\D[^aeiou][^bcDf]\\S[^AEIOU][^.,]$"); // Use \\ instead of using \
+        tester.checker("^\\D[^aeiou][^bcDf]\\S[^AEIOU][^.,]$");
 
     }
 

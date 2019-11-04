@@ -1,15 +1,15 @@
-package Regex.Introduction.easy;
+package Regex.GroupingAndCapturing.easy;
 
 import java.util.Scanner;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class MatchingWhitespaceAndNonWhitespaceCharacter  {
+public class AlternativeMatching {
 
     public static void main(String[] args) {
 
-        Regex_Test tester = new Regex_Test();
-        tester.checker("(\\S\\S\\s){2}\\S\\S");
+        AlternativeMatching.Regex_Test tester = new AlternativeMatching.Regex_Test();
+        tester.checker("^(Mr\\.|Mrs\\.|Ms\\.|Dr\\.|Er\\.)[a-zA-Z]+$");
 
     }
 

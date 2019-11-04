@@ -1,21 +1,21 @@
-package Regex.Introduction.easy;
+package Regex.Backreferences.easy;
 
 import java.util.Scanner;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class MatchingWhitespaceAndNonWhitespaceCharacter  {
+public class ForwardReferences {
 
     public static void main(String[] args) {
 
-        Regex_Test tester = new Regex_Test();
-        tester.checker("(\\S\\S\\s){2}\\S\\S");
+        MatchingSameTextAgainAndAgain.Regex_Test tester = new MatchingSameTextAgainAndAgain.Regex_Test();
+        tester.checker("^((tac){2,}tic)+(\\2+(tic)?)*$");
 
     }
 
     static class Regex_Test {
 
-        public void checker(String Regex_Pattern){
+        public void checker(String Regex_Pattern) {
 
             Scanner Input = new Scanner(System.in);
             String Test_String = Input.nextLine();

@@ -7,7 +7,7 @@ import java.util.regex.Pattern;
 public class MatchingDigitsAndNonDigitCharacters {
     public static void main(String[] args) {
         Regex_Test tester = new MatchingDigitsAndNonDigitCharacters.Regex_Test();
-        tester.checker("(\\d\\d\\D){2}\\d{4}"); // Use \\ instead of using \
+        tester.checker("(\\d\\d\\D){2}\\d{4}");
 
     }
 

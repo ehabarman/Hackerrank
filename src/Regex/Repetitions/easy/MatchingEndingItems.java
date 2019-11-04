@@ -1,21 +1,21 @@
-package Regex.Introduction.easy;
+package Regex.Repetitions.easy;
 
 import java.util.Scanner;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class MatchingWhitespaceAndNonWhitespaceCharacter  {
+public class MatchingEndingItems  {
 
     public static void main(String[] args) {
 
-        Regex_Test tester = new Regex_Test();
-        tester.checker("(\\S\\S\\s){2}\\S\\S");
+        MatchingEndingItems.Regex_Test tester = new MatchingEndingItems.Regex_Test();
+        tester.checker("^[a-zA-Z]*s$");
 
     }
 
     static class Regex_Test {
 
-        public void checker(String Regex_Pattern){
+        public void checker(String Regex_Pattern) {
 
             Scanner Input = new Scanner(System.in);
             String Test_String = Input.nextLine();
@@ -26,4 +26,3 @@ public class MatchingWhitespaceAndNonWhitespaceCharacter  {
 
     }
 }
-
