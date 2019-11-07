@@ -18,9 +18,9 @@ public class FindASubWord {
             int counter = 0;
             String query = s.nextLine();
             Pattern pattern = Pattern.compile("\\w+" + query + "\\w+");
-            for (int i = 0; i < n; i++){
+            for (int i = 0; i < n; i++) {
                 Matcher m = pattern.matcher(sentence[i]);
-                while(m.find())
+                while (m.find())
                     counter++;
             }
             System.out.println(counter);
