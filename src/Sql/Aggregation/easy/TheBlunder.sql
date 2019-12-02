@@ -1,0 +1,2 @@
+SELECT ROUND(SUM(Salary)/COUNT(Salary)) - ROUND(SUM(REPLACE(Salary, '0', ''))/COUNT(Salary))
+FROM EMPLOYEES
